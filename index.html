@@ -1,9 +1,334 @@
 <!DOCTYPE html>
 <html>
 
-<body>
+<head>
+   <style>
+      td,
+      th {
+         border: 0px solid black;
+      }
 
-<h1>Coming soon...</h1>
+      img {
+         padding: 5px;
+      }
+   </style>
+   <title>How to Handle Sketch-Abstraction in Sketch-Based Image Retrieval?</title>
 
-</body>
+   <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
+   <link rel="stylesheet" href="./static/css/bulma.min.css">
+   <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+   <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+   <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+   <link rel="stylesheet" href="./static/css/index.css">
+   <link rel="icon" href="./static/images/favicon.svg">
+   <link rel="stylesheet" href="https://unpkg.com/image-compare-viewer/dist/image-compare-viewer.min.css">
+   <link rel="stylesheet" href="css/app.css">
+   <link rel="stylesheet" href="css/bootstrap.min.css">
+   <script src="https://unpkg.com/image-compare-viewer/dist/image-compare-viewer.min.js"></script>
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+   <script defer src="./static/js/fontawesome.all.min.js"></script>
+   <script src="./static/js/bulma-carousel.min.js"></script>
+   <script src="./static/js/bulma-slider.min.js"></script>
+   <script src="./static/js/index.js"></script>
+</head>
+
+<section class="hero">
+   <div class="hero-body">
+      <div class="container is-max-desktop">
+         <div class="columns is-centered">
+            <div class="column has-text-centered">
+               <h1 class="title is-1 publication-title" , style="color:purple;">How to Handle Sketch-Abstraction in
+                  Sketch-Based Image Retrieval?</h1>
+               <div class="is-size-5 publication-authors">
+                  <span class="author-block">
+                     <a href="https://subhadeepkoley.github.io/">Subhadeep Koley</a><sup>1,2</sup>,</span>
+                  <span class="author-block">
+                     <a href="https://ayankumarbhunia.github.io/">Ayan Kumar Bhunia</a><sup>1</sup>,</span>
+                  <span class="author-block">
+                     <a href="https://aneeshan95.github.io/">Aneeshan Sain</a><sup>1</sup>,</span>
+                  <span class="author-block">
+                     <a href="http://www.pinakinathc.me/">Pinaki Nath Chowdhury</a><sup>1</sup>,</span>
+                  <span class="author-block">
+                     <a href="http://personal.ee.surrey.ac.uk/Personal/T.Xiang/index.html">Tao
+                        Xiang</a><sup>1,2</sup>,</span>
+                  <span class="author-block">
+                     <a href="http://personal.ee.surrey.ac.uk/Personal/Y.Song/">Yi-Zhe Song</a><sup>1,2</sup></span>
+                  </span>
+               </div>
+               <div class="is-size-5 publication-authors">
+                  <span class="author-block"><sup>1</sup>SketchX, CVSSP, University of Surrey, United Kingdom</span>
+                  <span class="author-block"><sup>2</sup>iFlyTek-Surrey Joint Research Centre on Artifiial
+                     Intelligence</span>
+               </div>
+               <!--     <div class="column has-text-centered">
+                     <a href="as">ICLR 2023</a>
+                     </span>
+                     </div> -->
+               <div class="column has-text-centered">
+                  <div class="publication-links">
+                     <!-- PDF Link. -->
+                     <span class="link-block">
+                        <a href="https://arxiv.org/pdf/2403.07203"
+                           class="external-link button is-normal is-rounded is-dark">
+                           <span class="icon">
+                              <i class="fas fa-file-pdf"></i>
+                           </span>
+                           <span>Paper (PDF)</span>
+                        </a>
+                     </span>
+                     <span class="link-block">
+                        <a href="https://arxiv.org/abs/2403.07203"
+                           class="external-link button is-normal is-rounded is-dark">
+                           <span class="icon">
+                              <i class="ai ai-arxiv"></i>
+                           </span>
+                           <span>arXiv</span>
+                        </a>
+                     </span>
+                     <!-- Video Link. -->
+                     <span class="link-block">
+                        <a href="" class="external-link button is-normal is-rounded is-dark">
+                           <span class="icon">
+                              <i class="fab fa-youtube"></i>
+                           </span>
+                           <span>Video (YouTube)</span>
+                        </a>
+                     </span>
+
+                     <!-- Dataset Link. -->
+                     <span class="link-block">
+                        <a href="" class="external-link button is-normal is-rounded is-dark">
+                           <span class="icon">
+                              <i class="far fa-images"></i>
+                           </span>
+                           <span>Poster</span>
+                        </a>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+</section>
+<section class="hero teaser">
+   <div class="container is-max-desktop">
+      <div class="hero-body">
+         <img class="round" style="width:1500px" src="./static/images/teaser.png" />
+         <h2 class="subtitle has-text-centered">
+            <span class="dnerf"></span> (Left): Freehand sketches exhibit varied levels of abstraction G: good, R:
+            reasonable, A: abstract. (Right): Unlike existing feature vector embedding, we learn a feature matrix
+            representation in the joint embedding space, regularised by a pre-trained StyleGAN's disentangled latent
+            space, and an abstraction-aware retrieval loss. The abstraction identification head dynamically decides the
+            row-dimension of the matrix embedding based on the query sketch abstraction/completeness.
+
+         </h2>
+      </div>
+   </div>
+</section>
+
+<section class="section">
+   <div class="container is-max-desktop">
+      <!-- Abstract. -->
+      <div class="columns is-centered has-text-centered">
+         <div class="column is-four-fifths">
+            <h2 class="title is-3">Abstract</h2>
+            <div class="content has-text-justified">
+               In this paper, we propose a novel abstraction-aware sketch-based image retrieval framework capable of
+               handling sketch abstraction at varied levels. Prior works had mainly focused on tackling sub-factors such
+               as drawing style and order, we instead attempt to model abstraction as a whole, and propose feature-level
+               and retrieval granularity-level designs so that the system builds into its DNA the necessary means to
+               interpret abstraction. On learning abstraction-aware features, we for the first-time harness the rich
+               semantic embedding of pre-trained StyleGAN model, together with a novel abstraction-level mapper that
+               deciphers the level of abstraction and dynamically selects appropriate dimensions in the feature matrix
+               correspondingly, to construct a feature matrix embedding that can be freely traversed to accommodate
+               different levels of abstraction. For granularity-level abstraction understanding, we dictate that the
+               retrieval model should not treat all abstraction-levels equally and introduce a differentiable surrogate
+               Acc.@q loss to inject that understanding into the system. Different to the gold-standard triplet loss,
+               our Acc.@q loss uniquely allows a sketch to narrow/broaden its focus in terms of how stringent the
+               evaluation should be - the more abstract a sketch, the less stringent (higher q). Extensive experiments
+               depict our method to outperform existing state-of-the-arts in standard SBIR tasks along with challenging
+               scenarios like early retrieval, forensic sketch-photo matching, and style-invariant retrieval.
+               </p>
+            </div>
+         </div>
+      </div>
+
+      <!-- <section class="hero teaser">
+         <div class="container is-max-desktop">
+            <div class="hero-body">
+               <iframe width="720" height="480" src="https://www.youtube.com/embed/k7xFbELpnv4?">
+               </iframe>
+               <h2 class="subtitle has-text-centered">
+                  <span class="dnerf"></span>
+               </h2>
+            </div>
+         </div>
+      </section> -->
+
+      <!--/ Abstract. -->
+      <!-- Paper video. -->
+      <section class="section">
+         <div class="container is-max-desktop">
+            <!-- Abstract. -->
+            <div class="columns is-centered has-text-centered">
+               <div class="column is-four-fifths">
+                  <h2 class="title is-3">Pilot Study</h2>
+                  <div class="content has-text-justified">
+                     </h2>
+                     <center>
+                        <img src="./static/images/pilot_1.png" alt="" border=0 height=300 width=650></img></ </center>
+                        <h5 class="subtitle has-text-centered">
+                           Pilot Study I: StyleGAN latent-disentanglement via optimising different groups of latent
+                           codes (coarse, medium, and fine).
+                        </h5>
+                        &nbsp;
+
+                        <center>
+                           <img src="./static/images/pilot_2.png" alt="" border=0 height=300 width=650></img></
+                              </center>
+                           <h5 class="subtitle has-text-centered">
+                              Pilot Study II: Evaluate retrieval consistency by comparing entropy of separation in the
+                              embedding space,
+                              evaluated over successive stages of sketch completion. Inset images show
+                              how our method directs the query to a single gallery image (blue)
+                              while pushing others away as sketching progresses.
+                           </h5>
+                  </div>
+               </div>
+            </div>
+      </section>
+      <section class="section">
+         <div class="container is-max-desktop">
+            <!-- Abstract. -->
+            <div class="columns is-centered has-text-centered">
+               <div class="column is-four-fifths">
+                  <h2 class="title is-3">Architecture</h2>
+                  <div class="content has-text-justified">
+                     </h2>
+                     <center>
+                        <img src="./static/images/arch.png" alt="" border=0 height=300 width=650></img></ </center>
+                        <h5 class="subtitle has-text-centered">
+                           Our method learns a feature matrix representation in
+                           the joint embedding space, regularised by a pre-trained StyleGAN,
+                           trained with a weighted summation of reconstruction, abstraction
+                           identification, and Acc.@q losses.
+                        </h5 &nbsp; </div>
+                  </div>
+               </div>
+      </section>
+      <section class="hero">
+         <div class="hero-body">
+            <div class="container is-max-desktop">
+               <!-- Abstract. -->
+               <div class="columns is-centered has-text-centered">
+                  <div class="column is-four-fifths">
+                     <h2 class="title is-3">Results</h2>
+                     <div class="content has-text-justified">
+                        <center>
+                           <img src="static/images/sketch_style.png" border=0 height=200 width=1500 />
+                        </center>
+                        <h5 class="subtitle has-text-centered">
+                           Proposed (blue) method's efficacy over Triplet-SN
+                           (green) against different sketching styles of the same shoe (red
+                           bordered).
+                           <br>
+                           <br>
+                           <center>
+                              <img src="static/images/OTF.png" border=0 height=150 width=800 />
+                           </center>
+                           <h5 class="subtitle has-text-centered">
+                              Quantitative results on ShoeV2 for early retrieval setup,
+                              visualised via the percentage of sketch. A higher area under the
+                              curve indicates better early retrieval performance.
+
+                              <br>
+                              <br>
+                              <center>
+                                 <img src="static/images/qual_1.png" border=0 height=400 width=900 />
+                              </center>
+                              <h5 class="subtitle has-text-centered">
+                                 Top-10 retrieved images for inputs abstracted (by GDSA) at different budgets (10%, 30%,
+                                 100%). Paired photo is red bordered.
+                                 <br>
+                                 <br>
+                                 <center>
+                                    <img src="static/images/qual_2.png" border=0 height=300 width=900 />
+                                 </center>
+                                 <h5 class="subtitle has-text-centered">
+                                    Top-10 retrieved images for inputs abstracted (by GDSA) at different budgets (10%,
+                                    30%, 100%). Paired photo is red bordered.
+                                    <br>
+                                    <br>
+                                    <center>
+                                       <img src="static/images/style_1.png" border=0 height=300 width=900 />
+                                    </center>
+                                    <h5 class="subtitle has-text-centered">
+                                       Proposed (blue) method's efficacy over Triplet-SN (green) against different
+                                       sketching styles of the same shoe (red bordered).
+                                       <br>
+                                       <br>
+                                       <center>
+                                          <img src="static/images/style_2.png" border=0 height=600 width=900 />
+                                       </center>
+                                       <h5 class="subtitle has-text-centered">
+                                          Proposed (blue) method's efficacy over Triplet-SN (green) against different
+                                          sketching styles of the same chair (red bordered).
+                                          <br>
+                                          <br>
+                                          <center>
+                                             <img src="static/images/qual_3.png" border=0 height=250 width=900 />
+                                          </center>
+                                          <h5 class="subtitle has-text-centered">
+                                             Top-10 qualitative retrieval results of the proposed method on sketches
+                                             from ShoeV2 dataset. Paired photo is red bordered.
+                                             <br>
+                                             <br>
+                                             <center>
+                                                <img src="static/images/qual_4.png" border=0 height=250 width=900 />
+                                             </center>
+                                             <h5 class="subtitle has-text-centered">
+                                                Top-10 qualitative retrieval results of the proposed method on sketches
+                                                from ChairV2 dataset. Paired photo is red bordered.
+                     </div>
+                  </div>
+               </div>
+            </div>
+            <section class="section" id="BibTeX">
+               <div class="container is-max-desktop content">
+                  <h2 class="title">BibTeX</h2>
+                  <pre><code>@inproceedings{koley2024handle,
+title={{How to Handle Sketch-Abstraction in Sketch-Based Image Retrieval?}},
+author={Koley, Subhadeep and Bhunia, Ayan Kumar and Sain, Aneeshan and Chowdhury, Pinaki Nath and Xiang, Tao and Song, Yi-Zhe},
+booktitle={CVPR},
+year={2024}
+}</code></pre>
+               </div>
+            </section>
+            <script>
+               const viewers = document.querySelectorAll(".image-compare");
+               viewers.forEach((element) => {
+                  let view = new ImageCompare(element, {
+                     hoverStart: true,
+                     addCircle: true
+                  }).mount();
+               });
+
+               $(document).ready(function () {
+                  var editor = CodeMirror.fromTextArea(document.getElementById("bibtex"), {
+                     lineNumbers: false,
+                     lineWrapping: true,
+                     readOnly: true
+                  });
+                  $(function () {
+                     $('[data-toggle="tooltip"]').tooltip()
+                  })
+               });
+            </script>
+            <br>
+            <p style="text-align:center"> Copyright: <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/"> CC
+                  BY-NC-SA 4.0</a> © Subhadeep Koley | Last updated: 05 April 2024 | Good artists <a
+                  href="https://nerfies.github.io/"> copy</a>, great artists steal.</a></p>
+            </body>
+
 </html>
