@@ -1,4 +1,4 @@
-# Official repository of **How to Handle Sketch-Abstraction in Sketch-Based Image Retrieval?**
+# How to Handle Sketch-Abstraction in Sketch-Based Image Retrieval?
 
 Accepted in **CVPR 2024**
 
